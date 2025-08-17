@@ -36,7 +36,7 @@ linters:
     - unconvert
     - unparam
     - whitespace
-    - wsl
+    - wsl_v5
     - wastedassign
     - dupl
 
@@ -54,10 +54,15 @@ linters:
     nolintlint:
       require-explanation: true
       require-specific: true
-    wsl:
-      allow-cuddle-declarations: true
-      force-err-cuddling: true
-      allow-assign-and-anything: true
+    wsl_v5:
+      allow-first-in-block: true
+      allow-whole-block: false
+      branch-max-lines: 2
+      enable:
+        - err
+      disable:
+        - assign
+        - decl
     gocognit:
       min-complexity: 20
     revive:
